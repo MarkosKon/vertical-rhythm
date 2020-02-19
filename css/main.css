@@ -20,26 +20,26 @@ main {
 }
 h1,
 h2,
-h3,
-h4 {
+h3 {
+  font-size: 1em;
   margin: var(--rhythm) 0;
 }
 h1 {
-  font-size: 3.81em;
-  line-height: 1.105;
   margin: calc(var(--rhythm) * 2) 0 var(--rhythm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 h2 {
-  font-size: 2.4em;
-  line-height: 1.1666666666666667;
+  letter-spacing: 0.05em;
+  font-kerning: normal;
+  font-variant-caps: all-small-caps;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-variant-ligatures: common-ligatures contextual;
+  font-feature-settings: "kern", "calt", "clig", "liga", "onum", "pnum", "smcp",
+    "c2sc";
 }
-h3,
-h4 {
-  font-size: 1em;
-}
-h4 {
+h3 {
   font-style: italic;
-  margin: var(--rhythm) 0 0;
 }
 p,
 ul,
