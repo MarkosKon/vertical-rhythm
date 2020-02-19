@@ -20,23 +20,21 @@ main {
 }
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-size: 1em;
+  font-weight: 700;
   margin: var(--rhythm) 0;
 }
 h1 {
   margin: calc(var(--rhythm) * 2) 0 var(--rhythm);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  font-style: italic;
 }
 h2 {
-  letter-spacing: 0.05em;
-  font-kerning: normal;
-  font-variant-caps: all-small-caps;
-  font-variant-numeric: oldstyle-nums proportional-nums;
-  font-variant-ligatures: common-ligatures contextual;
-  font-feature-settings: "kern", "calt", "clig", "liga", "onum", "pnum", "smcp",
-    "c2sc";
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 h3 {
   font-style: italic;
