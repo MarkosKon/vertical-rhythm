@@ -7,7 +7,7 @@
   --rhythm: calc(var(--font-size) * var(--line-height));
   font-size: var(--font-size);
   line-height: var(--line-height);
-  font-family: "IBM Plex Serif", serif;
+  font-family: "Source Serif Variable", serif;
 }
 body {
   margin: 0;
@@ -38,8 +38,8 @@ h4 {
   font-size: 1em;
 }
 h4 {
- font-style: italic; 
- margin: var(--rhythm) 0 0;
+  font-style: italic;
+  margin: var(--rhythm) 0 0;
 }
 p,
 ul,
