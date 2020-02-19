@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --font-size: 20px;
+  --line-height: 1.4;
+  --rhythm: calc(var(--font-size) * var(--line-height));
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-family: "IBM Plex Serif", serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+main {
+  max-width: calc(var(--rhythm) * 22);
+  margin: 0 auto;
+  padding: 0 var(--rhythm);
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: var(--rhythm) 0;
+}
+h1 {
+  font-size: 3.81em;
+  line-height: 1.105;
+  margin: calc(var(--rhythm) * 2) 0 var(--rhythm);
+}
+h2 {
+  font-size: 2.4em;
+  line-height: 1.1666666666666667;
+}
+h3,
+h4 {
+  font-size: 1em;
+}
+h4 {
+ font-style: italic; 
+ margin: var(--rhythm) 0 0;
+}
+p,
+ul,
+ol,
+blockquote {
+  margin: 0 0 var(--rhythm);
+}
+ul,
+ol {
+  padding-left: 0;
+}
+blockquote {
+  padding-left: calc(var(--rhythm) / 2);
+  border-left: 4px solid gray;
+}
+.typographic-grid {
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 170, 255, 0.3) 1px,
+    transparent 0
+  );
+  background-position: left -0.3em;
+  /* background-position: left top; */
+  background-repeat: repeat;
+  background-size: 100% var(--rhythm);
+}
