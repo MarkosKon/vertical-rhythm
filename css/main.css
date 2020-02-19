@@ -23,22 +23,24 @@ h2,
 h3,
 h4 {
   margin: var(--rhythm) 0;
+  font-weight: 700;
 }
 h1 {
-  font-size: 3.81em;
-  line-height: 1.105;
+  font-size: 2.35em;
+  line-height: 1.19148936;
   margin: calc(var(--rhythm) * 2) 0 var(--rhythm);
 }
 h2 {
-  font-size: 2.4em;
-  line-height: 1.1666666666666667;
+  font-size: 1.8em;
+  line-height: 1.55555556;
 }
-h3,
+h3 {
+  font-size: 1.35em;
+  line-height: 1.03703704;
+}
 h4 {
   font-size: 1em;
-}
-h4 {
-  font-style: italic;
+  line-height: 1.4;
   margin: var(--rhythm) 0 0;
 }
 p,
