@@ -5,9 +5,15 @@
   --font-size: 20px;
   --line-height: 1.4;
   --rhythm: calc(var(--font-size) * var(--line-height));
+  --extra-space: 0.15em;
   font-size: var(--font-size);
   line-height: var(--line-height);
   font-family: "Source Serif Variable", serif;
+}
+@media screen and (max-width: 500px) {
+  :root {
+    --line-height: 1.3;
+  }
 }
 body {
   margin: 0;
@@ -27,25 +33,64 @@ h4 {
 h1 {
   font-size: 3.81em;
   line-height: 1.105;
-  margin: calc(var(--rhythm) * 2) 0 var(--rhythm);
+  /* 
+    - x * line-height = 1em <=> x = 1em/1.105 = 0,9049em 
+    - Extra line height space = 1em - 0,9049em = 0,0951‬em
+    - We need to shift half of that space: 0,0951‬em / 2 = 0,04755‬em
+    - So the total shift is the extra space shift + half of the line height.
+  */
+  --shift: calc(var(--extra-space) + 0.0475113em);
+  padding-top: var(--shift);
+  margin: var(--rhythm) 0 calc(var(--rhythm) - var(--shift));
+}
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 3.9em;
+    line-height: 1;
+    --shift: var(--extra-space);
+  }
 }
 h2 {
   font-size: 2.4em;
   line-height: 1.1666666666666667;
+  --shift: calc(var(--extra-space) + 0.07142857em);
+  padding-top: var(--shift);
+  margin: 0 0 calc(var(--rhythm) - var(--shift));
+}
+@media screen and (max-width: 500px) {
+  h2 {
+    font-size: 2.6em;
+    line-height: 1;
+    --shift: var(--extra-space);
+  }
 }
 h3,
-h4 {
-  font-size: 1em;
-}
-h4 {
-  font-style: italic;
-  margin: var(--rhythm) 0 0;
-}
+h4,
 p,
 ul,
 ol,
 blockquote {
-  margin: 0 0 var(--rhythm);
+  font-size: 1em;
+  line-height: var(--line-height);
+  --shift: calc(var(--extra-space) + 0.2em);
+  padding-top: var(--shift);
+  margin: 0 0 calc(var(--rhythm) - var(--shift));
+}
+@media screen and (max-width: 500px) {
+  h3,
+  h4,
+  p,
+  ul,
+  ol,
+  blockquote {
+    --shift: calc(var(--extra-space) + 0.15em);
+  }
+}
+h3 {
+  font-style: italic;
+}
+h4 {
+  margin: 0 0 calc(-1 * var(--shift));
 }
 ul,
 ol {
@@ -61,8 +106,7 @@ blockquote {
     rgba(0, 170, 255, 0.3) 1px,
     transparent 0
   );
-  background-position: left -0.3em;
-  /* background-position: left top; */
+  background-position: left top;
   background-repeat: repeat;
   background-size: 100% var(--rhythm);
 }
